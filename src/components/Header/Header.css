@@ -1,0 +1,14 @@
+.header {
+  background-color: #222;
+  height: 150px;
+  padding: 20px;
+}
+
+.header__elem {
+  font-size: 1.5em;
+  text-align: center;
+}
+
+.header--white {
+  color: white;
+}
