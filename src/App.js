@@ -3,6 +3,7 @@ import React, { Component } from "react";
 import Header from "components/Header/Header";
 import InputForm from "components/InputForm/InputForm";
 import PendingTasks from "components/PendingTasks/PendingTasks";
+
 import "./App.css";
 
 class App extends Component {
@@ -24,7 +25,7 @@ class App extends Component {
 
   renderPendingTasks = () => {
     return this.state.tasks ?
-      <PendingTasks tasks={this.state.tasks} /> :
+      <PendingTasks tasks={ this.state.tasks } /> :
       <h1>Nothing else</h1>
   }
 
@@ -32,8 +33,8 @@ class App extends Component {
     return (
       <div className="App">
         <Header />
-        <InputForm addTask={this.handleAddTask} />
-        <div>{this.renderPendingTasks()}</div>
+        <InputForm addTask={ this.handleAddTask } />
+        <div>{ this.renderPendingTasks() }</div>
       </div>
     );
   }

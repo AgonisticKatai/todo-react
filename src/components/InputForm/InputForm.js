@@ -1,4 +1,5 @@
 import React from "react";
+import uuid from "uuid/v4"
 
 import "./InputForm.css";
 
@@ -6,13 +7,16 @@ const InputForm = props => {
 
   const handleSubmit = e => {
     e.preventDefault();
-    const newTask = this.taskInput.value;
+    const newTask = {
+      id: uuid(),
+      title: this.taskInput.value
+    }
     props.addTask(newTask)
   };
 
   return (
     <div className="d-flex justify-content-center">
-      <form className="form-inline" onSubmit={handleSubmit}>
+      <form className="form-inline" onSubmit={ handleSubmit }>
         <div className="form-group">
           <input
             type="text"
@@ -20,9 +24,7 @@ const InputForm = props => {
             placeholder="Enter new task"
             name="taskInput"
             autoFocus
-            ref={node => {
-              this.taskInput = node;
-            }}
+            ref={ node => { this.taskInput = node }}
           />
         </div>
         <button type="submit" className="btn btn-primary my-2">
