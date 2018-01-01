@@ -12,15 +12,27 @@ const TasksContainer = props => {
   return (
     <div className="container">
       <div className="row">
-        <h1>Pending Tasks</h1>
-        <PendingTasks
-          tasks={pendingTasks}
-          markAsCompleted={props.markAsCompleted}
-        />
-      </div>
-      <div className="row">
-        <h1>Completed Tasks</h1>
-        <CompletedTasks tasks={completedTasks} />
+        <div className="col-xs-12 col-sm-6 col-lg-6">
+          <div className="card text-center">
+            <div className="card-header display-4">Pending Tasks</div>
+            <PendingTasks
+              tasks={pendingTasks}
+              markAsCompleted={props.markAsCompleted}
+            />
+            <div className="card-footer text-muted mt-2">
+              {pendingTasks.length} tasks left
+            </div>
+          </div>
+        </div>
+        <div className="col-xs-12 col-sm-6 col-lg-6">
+          <div className="card text-center">
+            <div className="card-header display-4">Completed Tasks</div>
+            <CompletedTasks tasks={completedTasks} />
+            <div className="card-footer text-muted mt-2">
+              {completedTasks.length} tasks done
+            </div>
+          </div>
+        </div>
       </div>
     </div>
   );

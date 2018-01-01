@@ -1,24 +1,20 @@
 import React from "react";
+import FontAwesomeIcon from "@fortawesome/react-fontawesome";
 
 const TaskCard = props => (
-  <div className="col-xs-12 col-sm-6 col-lg-4">
-    <div className="card mb-4">
-      <ul className="list-group list-group-flux">
-        <li className="list-group-item d-inline-flex justify-content-between">
-          <strong>{props.title}</strong>
-          <button
-            type="button"
-            className="close"
-            aria-label="Close"
-            onClick={() => {
-              props.markAsCompleted(props.id)
-            }}
-          >
-            <span aria-hidden="true">&times;</span>
-          </button>
-        </li>
-      </ul>
-    </div>
+  <div className="card mx-2 mt-2">
+    <ul className="list-group list-group-flux">
+      <li className="list-group-item d-inline-flex align-items-center justify-content-between">
+        <strong>{props.title}</strong>
+
+        <FontAwesomeIcon
+          icon="check-circle"
+          onClick={() => {
+            props.markAsCompleted(props.id);
+          }}
+        />
+      </li>
+    </ul>
   </div>
 );
 

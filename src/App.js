@@ -27,10 +27,10 @@ class App extends Component {
   handleMarkAsCompleted = taskId => {
     this.setState({
       tasks: this.state.tasks.map(task => {
-        if (task.id === taskId) task.completed = true
-        return task
+        if (task.id === taskId) task.completed = true;
+        return task;
       })
-    })
+    });
   };
 
   renderTasks = () => {
@@ -40,7 +40,7 @@ class App extends Component {
         markAsCompleted={this.handleMarkAsCompleted}
       />
     ) : (
-      <h1>Any tasks yet...</h1>
+      <h1 className="display-4 text-center">...</h1>
     );
   };
 
