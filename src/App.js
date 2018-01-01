@@ -2,7 +2,7 @@ import React, { Component } from "react";
 
 import Header from "components/Header/Header";
 import InputForm from "components/InputForm/InputForm";
-import PendingTasks from "components/PendingTasks/PendingTasks";
+import TasksContainer from "components/TasksContainer/TasksContainer";
 
 import "./App.css";
 
@@ -15,26 +15,41 @@ class App extends Component {
   }
 
   handleAddTask = newTask => {
-    this.state.tasks ? this.setState({
-      tasks: [...this.state.tasks, newTask]
-    }) : this.setState({
-      tasks: [newTask]
-    })
-
+    this.state.tasks
+      ? this.setState({
+          tasks: [...this.state.tasks, newTask]
+        })
+      : this.setState({
+          tasks: [newTask]
+        });
   };
 
-  renderPendingTasks = () => {
-    return this.state.tasks ?
-      <PendingTasks tasks={ this.state.tasks } /> :
-      <h1>Nothing else</h1>
-  }
+  handleMarkAsCompleted = taskId => {
+    this.setState({
+      tasks: this.state.tasks.map(task => {
+        if (task.id === taskId) task.completed = true
+        return task
+      })
+    })
+  };
+
+  renderTasks = () => {
+    return this.state.tasks ? (
+      <TasksContainer
+        {...this.state}
+        markAsCompleted={this.handleMarkAsCompleted}
+      />
+    ) : (
+      <h1>Any tasks yet...</h1>
+    );
+  };
 
   render() {
     return (
       <div className="App">
         <Header />
-        <InputForm addTask={ this.handleAddTask } />
-        <div>{ this.renderPendingTasks() }</div>
+        <InputForm addTask={this.handleAddTask} />
+        <div>{this.renderTasks()}</div>
       </div>
     );
   }

@@ -1,19 +1,14 @@
 import React from "react";
 
+import TaskCard from "components/TaskCard/TaskCard";
+
 import "./PendingTasks.css";
 
-const PendingTasks = props => (
-  <div>
-    { props.tasks.map(task => {
-      return (
-        <div key={task.id} className="list-group">
-          <a href="" className="list-group-item list-group-item-action">
-            { task.title }
-          </a>
-        </div>
-      )
-    })}
-  </div>
-)
+const PendingTasks = props => {
+ return props.tasks.map(task => {
+    return <TaskCard key={task.id} {...task} {...props} />;
+  })
+}
+
 
 export default PendingTasks;

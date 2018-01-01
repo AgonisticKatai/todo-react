@@ -9,7 +9,8 @@ const InputForm = props => {
     e.preventDefault();
     const newTask = {
       id: uuid(),
-      title: this.taskInput.value
+      title: this.taskInput.value,
+      completed: false
     }
     props.addTask(newTask)
   };
@@ -20,10 +21,11 @@ const InputForm = props => {
         <div className="form-group">
           <input
             type="text"
-            className="form-control my-2 mr-sm-2"
+            className="form-control my-5 mr-sm-2"
             placeholder="Enter new task"
             name="taskInput"
             autoFocus
+            required={true}
             ref={ node => { this.taskInput = node }}
           />
         </div>
