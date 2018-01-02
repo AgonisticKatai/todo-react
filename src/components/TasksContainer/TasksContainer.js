@@ -20,6 +20,7 @@ const TasksContainer = props => {
               tasks={pendingTasks}
               markAsCompleted={props.markAsCompleted}
               editTask={props.editTask}
+              removeTask={props.removeTask}
             />
             <div className="card-footer text-muted mt-2">
               {pendingTasks.length} tasks left

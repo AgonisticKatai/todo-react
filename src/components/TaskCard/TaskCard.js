@@ -9,9 +9,7 @@ const TaskCard = props => (
         <button
           type="button"
           className="btn btn-outline-success btn-sm my-2 mr-1"
-          onClick={() => {
-            props.markAsCompleted(props.id);
-          }}
+          onClick={() => props.markAsCompleted(props.id)}
         >
           <FontAwesomeIcon icon="check-circle" />
         </button>
@@ -27,9 +25,7 @@ const TaskCard = props => (
         <button
           type="button"
           className="btn btn-outline-danger btn-sm my-2 mr-2"
-          onClick={() => {
-            console.log("removed...");
-          }}
+          onClick={() => props.removeTask(props.id)}
         >
           <FontAwesomeIcon icon="trash-alt" />
         </button>

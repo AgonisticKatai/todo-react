@@ -24,15 +24,6 @@ class App extends Component {
         });
   };
 
-  handleEditTask = (taskId, titleEdited) => {
-    this.setState({
-      tasks: this.state.tasks.map(task => {
-        if (task.id === taskId) task.title = titleEdited;
-        return task;
-      })
-    });
-  };
-
   handleMarkAsCompleted = taskId => {
     this.setState({
       tasks: this.state.tasks.map(task => {
@@ -42,12 +33,32 @@ class App extends Component {
     });
   };
 
+  handleEditTask = (taskId, titleEdited) => {
+    this.setState({
+      tasks: this.state.tasks.map(task => {
+        if (task.id === taskId) task.title = titleEdited;
+        return task;
+      })
+    });
+  };
+
+  handleRemoveTask = taskId => {
+    let indexToDelete = "";
+    const tasks = this.state.tasks.map((task, index) => {
+      if (task.id === taskId) indexToDelete = index;
+      return task;
+    });
+    tasks.splice(indexToDelete, 1);
+    this.setState({ tasks });
+  };
+
   renderTasks = () => {
     return this.state.tasks ? (
       <TasksContainer
         {...this.state}
         markAsCompleted={this.handleMarkAsCompleted}
         editTask={this.handleEditTask}
+        removeTask={this.handleRemoveTask}
       />
     ) : (
       <div>

@@ -1,10 +1,11 @@
-import React, { Component } from "react";
+import React from "react";
 
 const EditTaskModal = props => {
 
   const handleSubmit = e => {
     e.preventDefault();
     props.editTask(props.taskToEdit.id, this.editTaskInput.value);
+    this.editTaskInput.value = ""
   };
 
   return (

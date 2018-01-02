@@ -17,7 +17,6 @@ class PendingTasks extends Component {
   }
 
   render() {
-    console.log('render', this.state)
     return (
       <div>
         <EditTaskModal {...this.props} taskToEdit={this.state}/>
