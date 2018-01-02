@@ -4,12 +4,17 @@ import ReactDOM from "react-dom";
 import App from "./App";
 
 import "./index.css";
-import "bootstrap/dist/css/bootstrap.css";
+import "bootstrap/dist/css/bootstrap.min.css";
+import "bootstrap/dist/js/bootstrap.min.js";
 
 import fontawesome from "@fortawesome/fontawesome";
 import brands from "@fortawesome/fontawesome-free-brands";
-import { faCheckCircle } from "@fortawesome/fontawesome-free-solid";
+import {
+  faCheckCircle,
+  faEdit,
+  faTrashAlt
+} from "@fortawesome/fontawesome-free-solid";
 
-fontawesome.library.add(brands, faCheckCircle);
+fontawesome.library.add(brands, faCheckCircle, faEdit, faTrashAlt);
 
 ReactDOM.render(<App />, document.getElementById("root"));

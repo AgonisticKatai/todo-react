@@ -40,7 +40,9 @@ class App extends Component {
         markAsCompleted={this.handleMarkAsCompleted}
       />
     ) : (
-      <h1 className="display-4 text-center">...</h1>
+      <div>
+        <h1 className="display-4 text-center">...</h1>
+      </div>
     );
   };
 
