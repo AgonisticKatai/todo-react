@@ -1,6 +1,5 @@
 import React from "react";
 import FontAwesomeIcon from "@fortawesome/react-fontawesome";
-import EditTaskModal from "components/EditTaskModal/EditTaskModal";
 
 const TaskCard = props => (
   <div className="card mx-2 mt-2">
@@ -16,7 +15,15 @@ const TaskCard = props => (
         >
           <FontAwesomeIcon icon="check-circle" />
         </button>
-        <EditTaskModal />
+        <button
+          type="button"
+          className="btn btn-outline-primary btn-sm my-2 mr-1"
+          data-toggle="modal"
+          data-target="#editModal"
+          onClick={() => props.taskToEdit(props.id, props.title)}
+        >
+          <FontAwesomeIcon icon="edit" />
+        </button>
         <button
           type="button"
           className="btn btn-outline-danger btn-sm my-2 mr-2"

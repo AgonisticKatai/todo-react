@@ -24,6 +24,15 @@ class App extends Component {
         });
   };
 
+  handleEditTask = (taskId, titleEdited) => {
+    this.setState({
+      tasks: this.state.tasks.map(task => {
+        if (task.id === taskId) task.title = titleEdited;
+        return task;
+      })
+    });
+  };
+
   handleMarkAsCompleted = taskId => {
     this.setState({
       tasks: this.state.tasks.map(task => {
@@ -38,6 +47,7 @@ class App extends Component {
       <TasksContainer
         {...this.state}
         markAsCompleted={this.handleMarkAsCompleted}
+        editTask={this.handleEditTask}
       />
     ) : (
       <div>

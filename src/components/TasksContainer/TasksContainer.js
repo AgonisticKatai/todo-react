@@ -9,22 +9,24 @@ const TasksContainer = props => {
   const completedTasks = props.tasks.filter(task => {
     return task.completed;
   });
+
   return (
     <div className="container">
       <div className="row">
-        <div className="col-xs-12 col-sm-6 col-lg-6">
+        <div className="col-xs-12 col-lg-6">
           <div className="card text-center">
             <div className="card-header">Pending Tasks</div>
             <PendingTasks
               tasks={pendingTasks}
               markAsCompleted={props.markAsCompleted}
+              editTask={props.editTask}
             />
             <div className="card-footer text-muted mt-2">
               {pendingTasks.length} tasks left
             </div>
           </div>
         </div>
-        <div className="col-xs-12 col-sm-6 col-lg-6">
+        <div className="col-xs-12 col-lg-6">
           <div className="card text-center">
             <div className="card-header">Completed Tasks</div>
             <CompletedTasks tasks={completedTasks} />
