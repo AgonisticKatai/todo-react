@@ -37,7 +37,10 @@ const TasksContainer = props => {
         <div className="col-xs-12 col-lg-6">
           <div className="card text-center">
             <div className="card-header">Completed Tasks</div>
-            <CompletedTasks tasks={completedTasks} />
+            <CompletedTasks
+              tasks={completedTasks}
+              removeTask={props.removeTask}
+            />
             <div className="card-footer text-muted mt-2">
               {completedTasks.length} tasks done
             </div>

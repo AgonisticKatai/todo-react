@@ -9,19 +9,28 @@ class PendingTasks extends Component {
   constructor(props) {
     super(props);
     this.state = {
+      hidden: false
     };
   }
 
   handleEditTask = (id, title) => {
-    this.setState({ id, title })
-  }
+    this.setState({ id, title });
+  };
 
   render() {
     return (
       <div>
-        <EditTaskModal {...this.props} taskToEdit={this.state}/>
+        <EditTaskModal {...this.props} taskToEdit={this.state} />
         {this.props.tasks.map(task => {
-          return <TaskCard taskToEdit={this.handleEditTask} key={task.id} {...task} {...this.props} />;
+          return (
+            <TaskCard
+              hidden={this.state.hidden}
+              taskToEdit={this.handleEditTask}
+              key={task.id}
+              {...task}
+              {...this.props}
+            />
+          );
         })}
       </div>
     );

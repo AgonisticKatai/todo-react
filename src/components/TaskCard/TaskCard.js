@@ -10,6 +10,7 @@ const TaskCard = props => (
           type="button"
           className="btn btn-outline-success btn-sm my-2 mr-1"
           onClick={() => props.markAsCompleted(props.id)}
+          hidden={props.hidden}
         >
           <FontAwesomeIcon icon="check-circle" />
         </button>
@@ -19,6 +20,7 @@ const TaskCard = props => (
           data-toggle="modal"
           data-target="#editModal"
           onClick={() => props.taskToEdit(props.id, props.title)}
+          hidden={props.hidden}
         >
           <FontAwesomeIcon icon="edit" />
         </button>

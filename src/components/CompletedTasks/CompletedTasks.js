@@ -5,9 +5,11 @@ import TaskCard from "components/TaskCard/TaskCard";
 import "./CompletedTasks.css";
 
 const CompletedTasks = props => {
-   return props.tasks.map(task => {
-    return <TaskCard key={task.id} {...task} />;
-  })
-}
+  const hidden = true
+
+  return props.tasks.map(task => {
+    return <TaskCard hidden={hidden} key={task.id} {...task} {...props} />;
+  });
+};
 
 export default CompletedTasks;
