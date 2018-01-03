@@ -33,6 +33,15 @@ class App extends Component {
     });
   };
 
+  handleMarkAllAsCompleted = () => {
+    this.setState({
+      tasks: this.state.tasks.map(task => {
+        task.completed = true;
+        return task
+      })
+    })
+  }
+
   handleEditTask = (taskId, titleEdited) => {
     this.setState({
       tasks: this.state.tasks.map(task => {
@@ -57,6 +66,7 @@ class App extends Component {
       <TasksContainer
         {...this.state}
         markAsCompleted={this.handleMarkAsCompleted}
+        markAllAsCompleted={this.handleMarkAllAsCompleted}
         editTask={this.handleEditTask}
         removeTask={this.handleRemoveTask}
       />
