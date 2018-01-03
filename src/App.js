@@ -10,18 +10,14 @@ class App extends Component {
   constructor(props) {
     super(props);
     this.state = {
-      tasks: null
+      tasks: []
     };
   }
 
   handleAddTask = newTask => {
-    this.state.tasks
-      ? this.setState({
-          tasks: [...this.state.tasks, newTask]
-        })
-      : this.setState({
-          tasks: [newTask]
-        });
+    this.setState({
+      tasks: [...this.state.tasks, newTask]
+    })
   };
 
   handleMarkAsCompleted = taskId => {
@@ -37,10 +33,10 @@ class App extends Component {
     this.setState({
       tasks: this.state.tasks.map(task => {
         task.completed = true;
-        return task
+        return task;
       })
-    })
-  }
+    });
+  };
 
   handleEditTask = (taskId, titleEdited) => {
     this.setState({
@@ -52,29 +48,20 @@ class App extends Component {
   };
 
   handleRemoveTask = taskId => {
-    let indexToDelete = "";
-    const tasks = this.state.tasks.map((task, index) => {
-      if (task.id === taskId) indexToDelete = index;
-      return task;
+    this.setState({
+      tasks: this.state.tasks.filter(task => {
+        if (task.id === taskId) return false;
+        return task;
+      })
     });
-    tasks.splice(indexToDelete, 1);
-    this.setState({ tasks });
   };
 
-  renderTasks = () => {
-    return this.state.tasks ? (
-      <TasksContainer
-        {...this.state}
-        markAsCompleted={this.handleMarkAsCompleted}
-        markAllAsCompleted={this.handleMarkAllAsCompleted}
-        editTask={this.handleEditTask}
-        removeTask={this.handleRemoveTask}
-      />
-    ) : (
-      <div>
-        <h1 className="display-4 text-center">...</h1>
-      </div>
-    );
+  handleCleanCompletedList = () => {
+    this.setState({
+      tasks: this.state.tasks.filter(task => {
+        return !task.completed;
+      })
+    })
   };
 
   render() {
@@ -82,7 +69,14 @@ class App extends Component {
       <div className="App">
         <Header />
         <InputForm addTask={this.handleAddTask} />
-        <div>{this.renderTasks()}</div>
+        <TasksContainer
+          {...this.state}
+          markAsCompleted={this.handleMarkAsCompleted}
+          markAllAsCompleted={this.handleMarkAllAsCompleted}
+          editTask={this.handleEditTask}
+          removeTask={this.handleRemoveTask}
+          cleanList={this.handleCleanCompletedList}
+        />
       </div>
     );
   }

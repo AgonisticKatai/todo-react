@@ -25,7 +25,13 @@ const TasksContainer = props => {
             <div className="card-footer text-muted mt-2">
               {pendingTasks.length} tasks left
             </div>
-            <button type="button" onClick={props.markAllAsCompleted} class="btn btn-large btn-block btn-success">Mark all as completed</button>
+            <button
+              type="button"
+              onClick={props.markAllAsCompleted}
+              className="btn btn-large btn-block btn-success"
+            >
+              Mark all as completed
+            </button>
           </div>
         </div>
         <div className="col-xs-12 col-lg-6">
@@ -35,6 +41,13 @@ const TasksContainer = props => {
             <div className="card-footer text-muted mt-2">
               {completedTasks.length} tasks done
             </div>
+            <button
+              type="button"
+              onClick={props.cleanList}
+              className="btn btn-large btn-block btn-danger"
+            >
+              Clean completed tasks list
+            </button>
           </div>
         </div>
       </div>
