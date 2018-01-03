@@ -1,11 +1,10 @@
 import React from "react";
 
 const EditTaskModal = props => {
-
   const handleSubmit = e => {
     e.preventDefault();
     props.editTask(props.taskToEdit.id, this.editTaskInput.value);
-    this.editTaskInput.value = ""
+    this.editTaskInput.value = "";
   };
 
   return (
@@ -51,8 +50,8 @@ const EditTaskModal = props => {
                   <input
                     className="form-control form-control-lg"
                     placeholder="enter new content..."
+                    required
                     id="message-text"
-                    name="editTaskInput"
                     ref={node => {
                       this.editTaskInput = node;
                     }}
@@ -77,6 +76,6 @@ const EditTaskModal = props => {
       </div>
     </div>
   );
-}
+};
 
 export default EditTaskModal;

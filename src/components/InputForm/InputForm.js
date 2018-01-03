@@ -1,8 +1,6 @@
 import React from "react";
 import uuid from "uuid/v4";
 
-import "./InputForm.css";
-
 const InputForm = props => {
   const handleSubmit = e => {
     e.preventDefault();

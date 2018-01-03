@@ -3,8 +3,6 @@ import React, { Component } from "react";
 import TaskCard from "components/TaskCard/TaskCard";
 import EditTaskModal from "components/EditTaskModal/EditTaskModal";
 
-import "./PendingTasks.css";
-
 class PendingTasks extends Component {
   constructor(props) {
     super(props);

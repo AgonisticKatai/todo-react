@@ -5,7 +5,7 @@ import "./Header.css";
 const Header = () => {
   return (
     <header className="header">
-      <h1 className="header__elem header--white">Todo React</h1>
+      <h1 className="header__elem header--white">Task Todo React</h1>
     </header>
   );
 };

@@ -4,8 +4,6 @@ import Header from "components/Header/Header";
 import InputForm from "components/InputForm/InputForm";
 import TasksContainer from "components/TasksContainer/TasksContainer";
 
-import "./App.css";
-
 class App extends Component {
   constructor(props) {
     super(props);

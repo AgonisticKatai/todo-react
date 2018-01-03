@@ -2,8 +2,6 @@ import React from "react";
 
 import TaskCard from "components/TaskCard/TaskCard";
 
-import "./CompletedTasks.css";
-
 const CompletedTasks = props => {
   const hidden = true
 
