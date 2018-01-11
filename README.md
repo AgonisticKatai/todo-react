@@ -3,4 +3,4 @@
 [![Bootstrap](https://github.com/FransLopez/logo-images/blob/master/logos/bootstrap.png)](http://getbootstrap.com/)
 [![React](https://github.com/FransLopez/logo-images/blob/master/logos/react.png)](https://facebook.github.io/react/)
 
-![Imgur](https://i.imgur.com/hxvSz6V.gifv)
+![Imgur](http://res.cloudinary.com/agonistickatai/image/upload/v1515680280/Captura_de_pantalla_2018-01-11_a_las_15.17.22_ngpn5n.png)
