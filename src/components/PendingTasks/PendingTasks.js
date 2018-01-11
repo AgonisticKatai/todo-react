@@ -7,7 +7,6 @@ class PendingTasks extends Component {
   constructor(props) {
     super(props);
     this.state = {
-      hidden: false
     };
   }
 
@@ -22,7 +21,7 @@ class PendingTasks extends Component {
         {this.props.tasks.map(task => {
           return (
             <TaskCard
-              hidden={this.state.hidden}
+              hidden={false}
               taskToEdit={this.handleEditTask}
               key={task.id}
               {...task}
