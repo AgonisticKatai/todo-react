@@ -8,4 +8,4 @@
 
 > **Author**: [Nacho Torrella](https://www.linkedin.com/in/nacho-torrella-6599ba79/)
 
-> **Project link**: [React-Todo](http://incompetent-spoon.surge.sh/)
+> **Project link**: http://incompetent-spoon.surge.sh
